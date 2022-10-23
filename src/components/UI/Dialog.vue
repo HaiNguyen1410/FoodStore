@@ -16,7 +16,10 @@
         <v-toolbar color="primary" dark> Product Detail</v-toolbar>
         <v-card-text>
           <b-img center :src="product.image" class="my-5" />
-          <form class="d-inline-flex float-end mt-2 mx-4" @keypress.enter.prevent>
+          <form
+            class="d-inline-flex float-end mt-2 mx-4"
+            @keypress.enter.prevent
+          >
             <b-form-input
               type="number"
               class="h-25"
@@ -79,25 +82,25 @@ export default {
             }
           }
           if (subStep == order.items.length) {
-              order.items.push({
-                id: this.product.id,
-                name: this.product.name,
-                price: this.product.price,
-                quantity: this.quantity,
-              });
-              fetch(
-                "https://634918dfa59874146b171fc0.mockapi.io/api/cart/" +
-                  order.id,
-                {
-                  method: "PUT",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify(order),
-                }
-              );
-              isProcessed = true;
-            }
+            order.items.push({
+              id: this.product.id,
+              name: this.product.name,
+              price: this.product.price,
+              quantity: this.quantity,
+            });
+            fetch(
+              "https://634918dfa59874146b171fc0.mockapi.io/api/cart/" +
+                order.id,
+              {
+                method: "PUT",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(order),
+              }
+            );
+            isProcessed = true;
+          }
         }
         if (step === this.$store.state.cart.length) {
           console.log("running");

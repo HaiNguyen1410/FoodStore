@@ -22,7 +22,9 @@
                 </div>
               </div>
             </h1>
-            <DialogCard :product="product" :btn="'theSlider'"><template v-slot:display>Buy Now</template></DialogCard>
+            <DialogCard :product="product" :btn="'theSlider'"
+              ><template v-slot:display>Buy Now</template></DialogCard
+            >
           </div>
         </div>
       </div>
@@ -31,10 +33,10 @@
 </template>
 
 <script>
-import DialogCard from './Dialog.vue'
+import DialogCard from "./Dialog.vue";
 export default {
-  components:{DialogCard},
-  props:['product'],
+  components: { DialogCard },
+  props: ["product"],
   data() {
     return {
       sliding: null,
@@ -48,13 +50,13 @@ export default {
       this.sliding = false;
     },
   },
-  inject:['products'],
-  data(){
-    return{
-      slider:[]
-    }
+  inject: ["products"],
+  data() {
+    return {
+      slider: [],
+    };
   },
-  created(){
+  created() {
     setTimeout(() => {
       var a;
       var b = [];
@@ -66,6 +68,6 @@ export default {
         }
       } while (this.slider.length < 3);
     }, 1000);
-  }
+  },
 };
 </script>

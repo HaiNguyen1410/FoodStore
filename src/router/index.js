@@ -4,21 +4,25 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  mode: "history",
+/*   mode: "history", */
   base: import.meta.env.BASE_URL,
   routes: [
     {
-      path: "/",
+      path:"/",
+      redirect:"/customer"
+    },
+    {
+      path: "/customer/",
       name: "home",
       component: () => import("../views/index.vue"),
     },
     {
-      path: "/products",
+      path: "/customer/products",
       name: "products",
       component: () => import("../views/food.vue"),
     },
     {
-      path: "/cart",
+      path: "/customer/cart",
       name: "cart",
       component: () => import("../views/cart.vue"),
     },

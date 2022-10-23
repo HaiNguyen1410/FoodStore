@@ -33,7 +33,7 @@
         </div>
       </div>
       <v-spacer></v-spacer>
-    <router-link to="/cart"><b-icon icon="cart-fill"></b-icon></router-link>
+      <router-link to="/cart"><b-icon icon="cart-fill"></b-icon></router-link>
     </nav>
   </div>
 </template>

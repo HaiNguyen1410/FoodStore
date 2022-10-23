@@ -24,12 +24,17 @@
           <v-row>
             <v-col>Name: {{ item.name }}</v-col>
             <v-col class="offset-3"> Quantity: {{ item.quantity }} </v-col>
-            <v-col class="offset-4" v-once>Sub-Total: ${{ parseInt(item.price)*item.quantity }}{{sumTotal(item)}}</v-col>
+            <v-col class="offset-4" v-once
+              >Sub-Total: ${{ parseInt(item.price) * item.quantity
+              }}{{ sumTotal(item) }}</v-col
+            >
           </v-row>
         </v-container>
       </div>
       <div class="price_box d-block">
-        <h6 class="price_heading">Total <span>$</span>{{ resetTotal(order) }}</h6>
+        <h6 class="price_heading">
+          Total <span>$</span>{{ resetTotal(order) }}
+        </h6>
       </div>
       <v-btn v-if="!order.paid" @click="purchase(order)">Purchase</v-btn>
     </v-sheet>
@@ -41,7 +46,7 @@ export default {
   data() {
     return {
       view: "Your Cart",
-      total:0
+      total: 0,
     };
   },
   methods: {
@@ -68,14 +73,14 @@ export default {
         }
       }
     },
-    sumTotal(item){
-      this.total+=(parseInt(item.price)*item.quantity)
+    sumTotal(item) {
+      this.total += parseInt(item.price) * item.quantity;
     },
-    resetTotal(order){
-      order.total=this.total
-      this.total=0
-      return order.total
-    }
+    resetTotal(order) {
+      order.total = this.total;
+      this.total = 0;
+      return order.total;
+    },
   },
 };
 </script>
