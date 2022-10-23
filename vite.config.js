@@ -19,5 +19,5 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  outDir: path.resolve(__dirname,"../view")
+  outDir: path.resolve(__dirname, "../view"),
 });

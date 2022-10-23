@@ -4,12 +4,12 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-/*   mode: "history", */
+  /*   mode: "history", */
   base: import.meta.env.BASE_URL,
   routes: [
     {
-      path:"/",
-      redirect:"/customer"
+      path: "/",
+      redirect: "/customer",
     },
     {
       path: "/customer/",
